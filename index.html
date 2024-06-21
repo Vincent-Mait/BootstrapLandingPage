@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS project2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #f2f6e9;
+        }
+        .navbar {
+            background: #09C922;
+        }
+        .nav-link,
+        .navbar-brand {
+            color: #fff;
+            cursor: pointer;
+        }
+        .nav-link {
+            margin-right: 1em !important;
+        }
+        .nav-link:hover {
+            color: #000;
+        }
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+        .header {
+            background-image: url('images/bkgnd.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100vh; /* Make sure header takes full viewport height */
+            display: flex;
+            align-items: center; /* Vertically center the description */
+            justify-content: center; /* Horizontally center the description */
+            text-align: center;
+        }
+        .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: #70FF83;
+        }
+        .description {
+            position: relative;
+            z-index: 1;
+            color: #4a5744;
+        }
+        .description h1 {
+            color: #4a5744;
+        }
+        .description p {
+            color: #fff;
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+        .description button {
+            border: 1px solid #09C922;
+            background: #09C922;
+            border-radius: 0;
+            color: #fff;
+        }
+        .description button:hover {
+            border: 1px solid #fff;
+            background: #fff;
+            color: #000;
+        }
+        .features {
+            margin: 4em auto;
+            padding: 1em;
+            position: relative;
+        }
+        .feature-title {
+            color: #333;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .features img {
+            -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+            margin-bottom: 16px;
+        }
+        .features .form-control,
+.features input {
+    border-radius: 0;
+}
+.features .btn {
+    background-color: #b5c4cf;
+    border: 1px solid #b5c4cf;
+    color: #fff;
+    margin-top: 20px;
+}
+.features .btn:hover {
+    background-color: #333;
+    border: 1px solid #333;
+}
+.background {
+    background: #09C922;
+    padding: 4em 0;
+}
+.team {
+    color: #5e5e55;
+    padding: 0 180px;
+}
+.team .card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}
+.team .card {
+    background:none;
+    border: none;
+}
+.team .card-img-top {
+    width: 150px;  /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    margin: 0 auto; /* Center the image within the card */
+}
+
+.team .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.page-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 60px 0 30px;
+}
+.footer-copyright {
+    color: #666;
+    padding: 40px 0;
+}
+@media (max-width: 575.98px) {
+    .description {
+        left: 0;
+        padding: 0 15px;
+        position: absolute;
+        top: 10%;
+        transform: none;
+        text-align: center;
+    }
+ 
+    .description h1 {
+        font-size: 2em;
+    }
+ 
+    .description p {
+        font-size: 1.2rem;
+    }
+ 
+    .features {
+        margin: 0;
+    }
+}
+.img-fluid {
+    height: 200px;
+    width: 200px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header header container-fluid">
+        <div class="overlay"></div>
+        <div class="description">
+            <h1>Welcome to the Landing Page!</h1>
+            <p>Discover a world of innovation and excellence in [industry/your field]. At [Your Company Name], we redefine [industry keywords] through cutting-edge solutions and unparalleled service. Whether you're looking to [describe primary service or benefit], [Your Company Name] is your trusted partner in achieving [customer goal or outcome]. Join us on our journey to [industry aspiration or goal].</p>
+            <p>Explore our offerings and see how we can elevate your [industry/field] experience today.</p>
+            <button class="btn btn-outline-secondary btn-lg">Tell Me More!</button>
+        </div>
+    </header>
+
+    <div class="container features">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <img src="image2.jpg" class="img-fluid">
+                <p>A leader is someone who inspires and guides others towards achieving collective success through vision, integrity, and empowerment.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <img src="image2.jpg" class="img-fluid">
+                <p>A leader is someone who inspires and guides others towards achieving collective success through vision, integrity, and empowerment.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <!-- Add content for the third column if needed -->
+            </div>
+        </div>
+    </div>
+    <h3 class="feature-title">Get in Touch!</h3>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Name" name="">
+</div>
+<div class="form-group">
+    <input type="email" class="form-control" placeholder="Email Address" name="email">
+</div>
+<div class="form-group">
+    <textarea class="form-control" rows="4"></textarea>
+</div>
+<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+<div class="background">
+    <div class="container team">
+        <div class="row">
+            <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <img class="card-img-top rounded-circle" src="johndoe.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Jane Doe</h4>
+                    <p class="card-text">Job Description</p>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <img class="card-img-top rounded-circle" src="johndoe.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Job Description</p>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <img class="card-img-top rounded-circle" src="johndoe.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Job Description</p>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <img class="card-img-top rounded-circle" src="johndoe.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Jane Doe</h4>
+                    <p class="card-text">Job Description</p>
+                </div>       
+        </div>
+    </div>
+</div>
+
+</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+                <p>In today's competitive landscape, continuous professional development is not just a pathway to success but a necessity. Embracing lifelong learning equips individuals with the agility and knowledge needed to navigate evolving industries and seize emerging opportunities. From honing technical skills to mastering interpersonal communication, each new learning experience contributes to personal growth and enhances professional capabilities.</p>
+                <p>By fostering a mindset of curiosity and adaptation, professionals can stay ahead of trends, innovate effectively, and contribute meaningfully to their organizations. Embracing professional development isn't merely about acquiring qualifications; it's about cultivating resilience, fostering creativity, and embracing change as catalysts for career advancement and fulfillment.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>1640 Riverside Drive, Hill Valley, California
+            <br/>info@mywebsite.com
+            <br/>+ 01 234 567 88
+            <br/>+ 01 234 567 89</p>
+        </div>
+    <div>
+    <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
+</footer>
+</html>
